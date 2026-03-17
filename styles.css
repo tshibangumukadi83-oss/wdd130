@@ -1,26 +1,42 @@
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: #fff;
+    padding: 0.5rem;
+    display: block;
+}
+
 main {
     max-width: 840px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #000;
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 aside {
     width: 20rem;
     margin: 1rem;
-    /* Corrected border syntax for older validators */
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 1rem;
     background-color: #eee;
-    /* Using pure black for better accessibility/contrast score */
     color: #000;
-    text-align: center;
 }
 
 aside img {
     width: 200px;
-    height: auto;
-}
-
-main img {
-    width: 150px;
     height: auto;
 }
 
