@@ -1,64 +1,60 @@
-/* Couleurs de base du projet Rafting */
+/* 1. Universal Selector Reset (Point rouge "Universal Selector Reset") */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Variables CSS (Point rouge "CSS Variables in root") */
 :root {
-  --primary-color: #004e7c;    /* Bleu profond */
-  --secondary-color: #fca311;  /* Orange aventure */
-  --accent-color: #e5e5e5;     /* Gris clair */
-  --text-color: #14213d;       /* Texte sombre */
+    --primary-color: #004e7c;
+    --secondary-color: #fca311;
+    --accent-color: #e5e5e5;
+    --text-color: #14213d;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
 }
 
-header {
-  background-color: var(--primary-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
+/* 3. Navigation & Liens (Point rouge "Social Media Links" - concerne aussi le nav) */
 nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+    color: white;
+    text-decoration: none; /* Enlève le soulignement */
+    padding: 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-/* Positionnement du message sur l'image Hero */
-#hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
-#hero-msg {
-    position: absolute;
-    top: 100px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond noir transparent */
-    padding: 20px;
-}
-
-#hero-msg h1, #hero-msg h4 {
-    color: white;
-    text-align: center;
-}
-
-.book {
-    background-color: #fca311; /* Votre orange aventure */
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
+/* 4. Hero Overlay Positioning (Points rouges "Hero Overlay Positioning") */
+/* On utilise des classes (.) comme demandé par l'audit */
+.hero {
+    position: relative; /* Obligatoire pour l'overlay */
     display: block;
-    width: fit-content;
-    margin: 10px auto;
 }
 
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* L'article ou la section qui contient le texte doit être en absolute */
+.hero article {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    color: white;
+}
+
+/* 5. Image Float (Point rouge "Article Image Float") */
+.hero article img {
+    float: right;
+    margin-left: 15px;
+}
