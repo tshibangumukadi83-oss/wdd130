@@ -32,4 +32,33 @@ nav a:hover {
   color: var(--secondary-color);
   text-decoration: underline;
 }
+/* Positionnement du message sur l'image Hero */
+#hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#hero-msg {
+    position: absolute;
+    top: 100px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond noir transparent */
+    padding: 20px;
+}
+
+#hero-msg h1, #hero-msg h4 {
+    color: white;
+    text-align: center;
+}
+
+.book {
+    background-color: #fca311; /* Votre orange aventure */
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+}
 
