@@ -38,11 +38,11 @@ header, main, footer {
   padding: 20px;
 }
 
-/* Style spécifique pour le logo */
+/* Ajustement du Logo pour un meilleur rendu */
 .logo {
-  width: 150px;
+  width: 100px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 }
 
 /* =========================================
@@ -69,92 +69,13 @@ header nav {
   margin-top: 15px;
 }
 
-nav a {
+header nav a {
   text-decoration: none;
   color: var(--text-on-primary);
   font-weight: bold;
+  padding: 5px 15px;
 }
 
-nav a:hover {
+header nav a:hover {
   color: var(--secondary-color);
-}
-
-/* =========================================
-   5. Hero Section
-   ========================================= */
-.hero {
-  position: relative;
-  margin-bottom: 30px;
-  border: 4px solid var(--accent1-color);
-}
-
-.hero img {
-  display: block;
-  width: 100%;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(229, 229, 229, 0.8);
-  color: var(--text-on-light);
-  padding: 10px 0;
-}
-
-.hero article {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 70%;
-  padding: 15px;
-  background-color: rgba(20, 33, 61, 0.85);
-  color: var(--text-on-dark);
-}
-
-.hero article img {
-  float: right;
-  width: 80px;
-  margin-left: 10px;
-  border: 1px solid var(--text-on-dark);
-}
-
-/* =========================================
-   6. Footer & Social Media
-   ========================================= */
-footer {
-  text-align: center;
-  border-top: 2px solid var(--primary-color);
-  background-color: var(--accent1-color);
-  margin-top: 40px;
-  padding: 20px;
-}
-
-footer p {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.socialmedia {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 15px;
-}
-
-.socialmedia img {
-  width: 32px;
-}
-
-/* =========================================
-   7. W3C Badge
-   ========================================= */
-.w3c-badge {
-  margin-top: 10px;
-}
-
-.w3c-img {
-  width: 88px;
-  height: auto;
-}
+  background-color: rgba(0, 0, 0, 0.1);
