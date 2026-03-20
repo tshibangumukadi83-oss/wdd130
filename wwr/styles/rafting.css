@@ -41,7 +41,7 @@ header, main, footer {
 .logo {
   width: 100px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 }
 
 /* =========================================
@@ -77,7 +77,7 @@ header nav a {
 
 header nav a:hover {
   color: var(--secondary-color);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================
@@ -105,14 +105,13 @@ header nav a:hover {
   color: var(--text-on-light);
   padding: 10px 0;
   margin: 0;
-  z-index: 1;
 }
 
 .hero article {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 70%;
+  width: 70%; /* Ajusté pour laisser un peu de place */
   padding: 15px;
   background-color: rgba(20, 33, 61, 0.85);
   color: var(--text-on-dark);
@@ -120,7 +119,7 @@ header nav a:hover {
 
 .hero article img {
   float: right;
-  width: 120px; /* Taille légèrement augmentée pour visibilité */
+  width: 100px; /* Un peu plus grand pour la visibilité */
   margin-left: 15px;
   border: 1px solid var(--text-on-dark);
 }
@@ -137,7 +136,8 @@ footer {
 }
 
 footer p {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .socialmedia {
@@ -149,7 +149,11 @@ footer p {
 
 .socialmedia img {
   width: 32px;
-  height: auto;
+  transition: transform 0.3s;
+}
+
+.socialmedia img:hover {
+  transform: scale(1.2);
 }
 
 /* =========================================
