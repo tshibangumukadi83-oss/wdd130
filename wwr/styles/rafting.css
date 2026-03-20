@@ -8,7 +8,7 @@
 }
 
 /* =========================================
-   1. Variables
+   1. Variables (9 au total)
    ========================================= */
 :root {
   --primary-color: #004e7c;
@@ -16,31 +16,31 @@
   --accent1-color: #e5e5e5;
   --accent2-color: #14213d;
   --text-on-dark: #ffffff;
-  --text-on-light: #14213d; /* ✔ corrigé pour contraste */
+  --text-on-light: #14213d; 
   --text-on-primary: #ffffff;
-
   --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
 
 /* =========================================
-   2. Body
+   2. Body & Global
    ========================================= */
 body {
   font-family: var(--body-font);
-  color: var(--accent2-color);
+  color: var(--accent2-color); /* Utilisation accent2 */
   background-color: white;
+  line-height: 1.6;
 }
 
-/* =========================================
-   3. Layout
-   ========================================= */
 header, main, footer {
   max-width: 840px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* =========================================
+   3. Typography
+   ========================================= */
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
@@ -49,7 +49,6 @@ h1, h2 {
 
 p, section, article {
   margin-bottom: 20px;
-  line-height: 1.6;
 }
 
 /* =========================================
@@ -65,20 +64,24 @@ header nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text-on-primary);
+  color: var(--text-on-primary); /* Utilisation text-on-primary */
   font-weight: bold;
+  padding: 5px 10px;
 }
 
 nav a:hover {
-  color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Utilisation secondary */
+  color: var(--accent2-color);
+  border-radius: 5px;
 }
 
 /* =========================================
-   5. Hero
+   5. Hero Section
    ========================================= */
 .hero {
   position: relative;
   margin-bottom: 30px;
+  border: 5px solid var(--accent1-color); /* Utilisation accent1 */
 }
 
 .hero img {
@@ -86,29 +89,26 @@ nav a:hover {
   width: 100%;
 }
 
-/* H1 */
 .hero h1 {
   position: absolute;
   top: 30px;
   width: 100%;
   text-align: center;
   padding: 15px;
-  background-color: rgba(229, 229, 229, 0.95);
-  color: var(--text-on-light); /* ✔ variable utilisée */
+  background-color: rgba(229, 229, 229, 0.85); /* Accent1 via RGBA */
+  color: var(--text-on-light); /* Utilisation text-on-light */
 }
 
-/* Article */
 .hero article {
   position: absolute;
   bottom: 30px;
   right: 30px;
   width: 80%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: var(--text-on-dark);
+  background-color: rgba(20, 33, 61, 0.8); /* Accent2 via RGBA */
+  color: var(--text-on-dark); /* Utilisation text-on-dark */
 }
 
-/* Image flottante */
 .hero article img {
   float: right;
   width: 100px;
@@ -121,7 +121,8 @@ nav a:hover {
    ========================================= */
 footer {
   text-align: center;
-  border-top: 2px solid var(--accent1-color); /* ✔ variable utilisée */
+  border-top: 3px solid var(--primary-color);
+  background-color: var(--accent1-color);
   margin-top: 40px;
 }
 
@@ -129,17 +130,22 @@ footer {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 15px 0;
 }
 
 .socialmedia img {
   width: 32px;
+  transition: transform 0.3s;
+}
+
+.socialmedia img:hover {
+  transform: scale(1.2);
 }
 
 /* =========================================
    7. W3C Badge
    ========================================= */
 .w3c-badge {
-  text-align: center;
   margin-top: 15px;
 }
 
