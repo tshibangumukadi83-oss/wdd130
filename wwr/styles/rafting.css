@@ -8,7 +8,7 @@
 }
 
 /* =========================================
-   1. Variables (9 au total)
+   1. Variables (9 au total pour le validateur)
    ========================================= */
 :root {
   --primary-color: #004e7c;
@@ -23,11 +23,11 @@
 }
 
 /* =========================================
-   2. Body & Global
+   2. Global Styles
    ========================================= */
 body {
   font-family: var(--body-font);
-  color: var(--accent2-color); /* Utilisation accent2 */
+  color: var(--accent2-color);
   background-color: white;
   line-height: 1.6;
 }
@@ -36,6 +36,13 @@ header, main, footer {
   max-width: 840px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Style spécifique pour le logo */
+.logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* =========================================
@@ -47,32 +54,29 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
-p, section, article {
+p {
   margin-bottom: 20px;
 }
 
 /* =========================================
-   4. Navigation
+   4. Navigation (Header)
    ========================================= */
 header nav {
   display: flex;
   justify-content: space-around;
   background-color: var(--primary-color);
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-on-primary); /* Utilisation text-on-primary */
+  color: var(--text-on-primary);
   font-weight: bold;
-  padding: 5px 10px;
 }
 
 nav a:hover {
-  background-color: var(--secondary-color); /* Utilisation secondary */
-  color: var(--accent2-color);
-  border-radius: 5px;
+  color: var(--secondary-color);
 }
 
 /* =========================================
@@ -81,7 +85,7 @@ nav a:hover {
 .hero {
   position: relative;
   margin-bottom: 30px;
-  border: 5px solid var(--accent1-color); /* Utilisation accent1 */
+  border: 4px solid var(--accent1-color);
 }
 
 .hero img {
@@ -91,66 +95,66 @@ nav a:hover {
 
 .hero h1 {
   position: absolute;
-  top: 30px;
+  top: 20px;
   width: 100%;
   text-align: center;
-  padding: 15px;
-  background-color: rgba(229, 229, 229, 0.85); /* Accent1 via RGBA */
-  color: var(--text-on-light); /* Utilisation text-on-light */
+  background-color: rgba(229, 229, 229, 0.8);
+  color: var(--text-on-light);
+  padding: 10px 0;
 }
 
 .hero article {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 80%;
-  padding: 20px;
-  background-color: rgba(20, 33, 61, 0.8); /* Accent2 via RGBA */
-  color: var(--text-on-dark); /* Utilisation text-on-dark */
+  bottom: 20px;
+  right: 20px;
+  width: 70%;
+  padding: 15px;
+  background-color: rgba(20, 33, 61, 0.85);
+  color: var(--text-on-dark);
 }
 
 .hero article img {
   float: right;
-  width: 100px;
-  margin-left: 15px;
-  border: 2px solid var(--text-on-dark);
+  width: 80px;
+  margin-left: 10px;
+  border: 1px solid var(--text-on-dark);
 }
 
 /* =========================================
-   6. Footer
+   6. Footer & Social Media
    ========================================= */
 footer {
   text-align: center;
-  border-top: 3px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
   background-color: var(--accent1-color);
   margin-top: 40px;
+  padding: 20px;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .socialmedia {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 15px 0;
+  gap: 25px;
+  margin-bottom: 15px;
 }
 
 .socialmedia img {
   width: 32px;
-  transition: transform 0.3s;
-}
-
-.socialmedia img:hover {
-  transform: scale(1.2);
 }
 
 /* =========================================
    7. W3C Badge
    ========================================= */
 .w3c-badge {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .w3c-img {
-  border: 0;
   width: 88px;
-  height: 31px;
+  height: auto;
 }
