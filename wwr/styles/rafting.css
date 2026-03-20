@@ -108,3 +108,27 @@ nav a:hover {
   right: 30px;
   width: 80%;
   padding: 20px;
+   /* =========================================
+   W3C Badge (No inline styles)
+   ========================================= */
+.w3c-badge {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.w3c-img {
+  border: 0;
+  width: 88px;
+  height: 31px;
+}
+
+/* =========================================
+   Hero Article Image (Required float)
+   ========================================= */
+.hero article img {
+  float: right;
+  width: 100px;
+  height: auto;
+  margin-left: 15px;
+  border: 2px solid var(--text-on-dark);
+}
