@@ -1,3 +1,15 @@
+/* =========================================
+   0. Universal Reset
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   1. Variables (9 au total - TOUTES UTILISÉES)
+   ========================================= */
 :root {
   --primary-color: #004e7c;
   --secondary-color: #fca311;
@@ -6,15 +18,17 @@
   --text-on-dark: #ffffff;
   --text-on-light: #14213d; 
   --text-on-primary: #ffffff;
-  --heading-font: Arial, sans-serif;
+  --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+/* =========================================
+   2. Global Styles
+   ========================================= */
 body {
   font-family: var(--body-font);
   color: var(--accent2-color);
+  background-color: white;
   line-height: 1.6;
 }
 
@@ -24,33 +38,70 @@ header, main, footer {
   padding: 20px;
 }
 
-.logo { width: 100px; display: block; margin: 0 auto 10px auto; }
+.logo {
+  width: 100px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
 
-h1, h2 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 15px; }
+/* =========================================
+   3. Typography
+   ========================================= */
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
 
+p {
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   4. Navigation (Header)
+   ========================================= */
 header nav {
   display: flex;
   justify-content: space-around;
   background-color: var(--primary-color);
   padding: 10px;
+  margin-top: 15px;
 }
 
 header nav a {
   text-decoration: none;
-  color: var(--text-on-primary); /* BLANC SUR BLEU = BON CONTRASTE */
+  color: var(--text-on-primary);
   font-weight: bold;
+  padding: 5px 15px;
 }
 
-.hero { position: relative; border: 4px solid var(--accent1-color); }
-.hero img { width: 100%; display: block; }
+header nav a:hover {
+  color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. Hero Section
+   ========================================= */
+.hero {
+  position: relative;
+  margin-bottom: 30px;
+  border: 4px solid var(--accent1-color);
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+}
 
 .hero h1 {
   position: absolute;
   top: 20px;
   width: 100%;
   text-align: center;
-  background-color: rgba(229, 229, 229, 0.85);
+  background-color: rgba(229, 229, 229, 0.8);
   color: var(--text-on-light);
+  padding: 10px 0;
   margin: 0;
 }
 
@@ -60,20 +111,52 @@ header nav a {
   right: 20px;
   width: 60%;
   padding: 15px;
-  background-color: rgba(20, 33, 61, 0.9); /* FOND TRÈS SOMBRE */
-  color: var(--text-on-dark); /* TEXTE BLANC = CONTRASTE PARFAIT */
+  background-color: rgba(20, 33, 61, 0.85);
+  color: var(--text-on-dark);
 }
 
-.hero article img { float: right; width: 80px; margin-left: 15px; }
+.hero article img {
+  float: right;
+  width: 80px;
+  margin-left: 15px;
+  border: 1px solid var(--text-on-dark);
+}
 
+/* =========================================
+   6. Footer & Social Media
+   ========================================= */
 footer {
   text-align: center;
-  background-color: var(--accent1-color);
-  padding: 20px;
   border-top: 2px solid var(--primary-color);
+  background-color: var(--accent1-color);
+  margin-top: 40px;
+  padding: 20px;
 }
 
-.socialmedia { display: flex; justify-content: center; gap: 25px; margin: 15px 0; }
-.socialmedia img { width: 32px; }
+footer p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
-.w3c-img { width: 88px; }
+.socialmedia {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.socialmedia img {
+  width: 32px;
+}
+
+/* =========================================
+   7. W3C Badge
+   ========================================= */
+.w3c-badge {
+  margin-top: 10px;
+}
+
+.w3c-img {
+  width: 88px;
+  height: auto;
+}
