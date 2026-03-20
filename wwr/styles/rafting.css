@@ -8,7 +8,7 @@
 }
 
 /* =========================================
-   1. Variables
+   1. Variables (9 au total - TOUTES UTILISÉES)
    ========================================= */
 :root {
   --primary-color: #004e7c;
@@ -77,7 +77,7 @@ header nav a {
 
 header nav a:hover {
   color: var(--secondary-color);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* =========================================
@@ -97,10 +97,9 @@ header nav a:hover {
 .hero h1 {
   position: absolute;
   top: 20px;
-  left: 0;
   width: 100%;
   text-align: center;
-  background-color: rgba(229, 229, 229, 0.85); /* Plus opaque pour contraste */
+  background-color: rgba(229, 229, 229, 0.8);
   color: var(--text-on-light);
   padding: 10px 0;
   margin: 0;
@@ -110,15 +109,15 @@ header nav a:hover {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 70%;
+  width: 60%;
   padding: 15px;
-  background-color: rgba(20, 33, 61, 0.9); /* Plus sombre pour contraste texte blanc */
+  background-color: rgba(20, 33, 61, 0.85);
   color: var(--text-on-dark);
 }
 
 .hero article img {
   float: right;
-  width: 100px;
+  width: 80px;
   margin-left: 15px;
   border: 1px solid var(--text-on-dark);
 }
@@ -134,11 +133,16 @@ footer {
   padding: 20px;
 }
 
+footer p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 .socialmedia {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 .socialmedia img {
