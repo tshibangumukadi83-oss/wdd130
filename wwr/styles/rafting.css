@@ -1,40 +1,39 @@
 /* =========================================
-   0. Universal Reset (Must be first)
+   0. Universal Reset
    ========================================= */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures consistent layout sizing */
+  box-sizing: border-box;
 }
 
 /* =========================================
-   1. Variables (Base Configuration)
+   1. Variables
    ========================================= */
 :root {
-  --primary-color: #004e7c;   /* Dark Blue */
-  --secondary-color: #fca311; /* Orange (Accent) */
-  --accent1-color: #e5e5e5;   /* Light Gray */
-  --accent2-color: #14213d;   /* Very Dark Blue (Text) */
-  --text-on-dark: #ffffff;     /* White text for dark backgrounds */
-  --text-on-light: #e5e5e5;    /* Light gray for text on semi-light backgrounds */
-  --text-on-primary: #ffffff;  /* White text on primary color (blue) */
+  --primary-color: #004e7c;
+  --secondary-color: #fca311;
+  --accent1-color: #e5e5e5;
+  --accent2-color: #14213d;
+  --text-on-dark: #ffffff;
+  --text-on-light: #14213d; /* ✔ corrigé pour contraste */
+  --text-on-primary: #ffffff;
 
-  /* Font variables */
   --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
 
 /* =========================================
-   2. General Body Styles
+   2. Body
    ========================================= */
 body {
   font-family: var(--body-font);
-  color: var(--accent2-color); /* Dark blue text on white background */
+  color: var(--accent2-color);
   background-color: white;
 }
 
 /* =========================================
-   3. Structure & Layout
+   3. Layout
    ========================================= */
 header, main, footer {
   max-width: 840px;
@@ -54,7 +53,7 @@ p, section, article {
 }
 
 /* =========================================
-   4. Navigation (Header & Footer)
+   4. Navigation
    ========================================= */
 header nav {
   display: flex;
@@ -66,17 +65,16 @@ header nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text-on-primary); /* White text on primary color */
+  color: var(--text-on-primary);
   font-weight: bold;
 }
 
 nav a:hover {
   color: var(--secondary-color);
-  text-decoration: underline;
 }
 
 /* =========================================
-   5. HERO Section (Overlay Positioning)
+   5. Hero
    ========================================= */
 .hero {
   position: relative;
@@ -86,30 +84,59 @@ nav a:hover {
 .hero img {
   display: block;
   width: 100%;
-  height: auto;
 }
 
-/* H1 Overlay */
+/* H1 */
 .hero h1 {
   position: absolute;
   top: 30px;
-  left: 0;
   width: 100%;
   text-align: center;
   padding: 15px;
-  background-color: rgba(229, 229, 229, 0.95); /* semi-light background */
-  color: var(--accent2-color); /* Dark blue text on light background, contrast 7:1 ✅ */
+  background-color: rgba(229, 229, 229, 0.95);
+  color: var(--text-on-light); /* ✔ variable utilisée */
 }
 
-/* Article Overlay */
+/* Article */
 .hero article {
   position: absolute;
   bottom: 30px;
   right: 30px;
   width: 80%;
   padding: 20px;
-   /* =========================================
-   W3C Badge (No inline styles)
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--text-on-dark);
+}
+
+/* Image flottante */
+.hero article img {
+  float: right;
+  width: 100px;
+  margin-left: 15px;
+  border: 2px solid var(--text-on-dark);
+}
+
+/* =========================================
+   6. Footer
+   ========================================= */
+footer {
+  text-align: center;
+  border-top: 2px solid var(--accent1-color); /* ✔ variable utilisée */
+  margin-top: 40px;
+}
+
+.socialmedia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialmedia img {
+  width: 32px;
+}
+
+/* =========================================
+   7. W3C Badge
    ========================================= */
 .w3c-badge {
   text-align: center;
@@ -120,15 +147,4 @@ nav a:hover {
   border: 0;
   width: 88px;
   height: 31px;
-}
-
-/* =========================================
-   Hero Article Image (Required float)
-   ========================================= */
-.hero article img {
-  float: right;
-  width: 100px;
-  height: auto;
-  margin-left: 15px;
-  border: 2px solid var(--text-on-dark);
 }
