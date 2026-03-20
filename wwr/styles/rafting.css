@@ -2,21 +2,19 @@
    1. Reset & Variables (Base Configuration)
    ========================================= */
 
-/* Universal selector to standardize margins and borders */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CSS variable definitions in the :root */
 :root {
   --primary-color: #004e7c;   /* Dark Blue */
   --secondary-color: #fca311; /* Orange (Accent) */
   --accent1-color: #e5e5e5;   /* Light Gray */
   --accent2-color: #14213d;   /* Very Dark Blue (Text) */
   --text-on-dark: #ffffff;     /* White text for dark backgrounds */
-  --text-on-light: #e5e5e5;    /* Light gray for semi-light backgrounds */
+  --text-on-light: #e5e5e5;    /* Light gray for text on semi-light backgrounds */
 
   /* Font variables */
   --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -29,7 +27,7 @@
 
 body {
   font-family: var(--body-font);
-  color: var(--accent2-color); /* #14213d */
+  color: var(--accent2-color); /* Dark blue text */
   background-color: white;
 }
 
@@ -45,7 +43,7 @@ header, main, footer {
 
 h1, h2 {
   font-family: var(--heading-font);
-  color: var(--primary-color); /* #004e7c */
+  color: var(--primary-color);
   margin-bottom: 15px;
 }
 
@@ -61,19 +59,19 @@ p, section, article {
 header nav {
   display: flex;
   justify-content: space-around;
-  background-color: var(--primary-color); /* #004e7c */
+  background-color: var(--primary-color);
   padding: 10px;
   margin-top: 10px;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-on-dark); /* White for contrast */
+  color: var(--text-on-dark); /* White text on dark background */
   font-weight: bold;
 }
 
 nav a:hover {
-  color: var(--secondary-color); /* Orange accent */
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 
@@ -100,8 +98,8 @@ nav a:hover {
   width: 100%;
   text-align: center;
   padding: 15px;
-  background-color: rgba(229, 229, 229, 0.95); /* Slightly more opaque for readability */
-  color: var(--primary-color); /* #004e7c, contrast ≈ 6.5:1 */
+  background-color: rgba(229, 229, 229, 0.95); /* semi-light background */
+  color: var(--text-on-light); /* Use the variable now */
 }
 
 /* Article Overlay */
@@ -111,8 +109,8 @@ nav a:hover {
   right: 30px;
   width: 80%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8); /* Darker for higher contrast */
-  color: var(--text-on-dark); /* White text for dark background */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  color: var(--text-on-dark); /* White text for contrast */
   border-radius: 8px;
 }
 
