@@ -88,6 +88,14 @@ header nav a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive Navigation */
+@media (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* =========================================
 5. Hero
 ========================================= */
@@ -130,6 +138,22 @@ header nav a:hover {
   border: 1px solid var(--text-on-dark);
 }
 
+/* Hero Responsive */
+@media (max-width: 600px) {
+  .hero article {
+    width: 90%;
+    bottom: 10px;
+    right: 5%;
+    padding: 10px;
+  }
+  .hero article img {
+    width: 50px;
+    float: none;
+    display: block;
+    margin: 10px auto 0 auto;
+  }
+}
+
 /* =========================================
 6. Footer
 ========================================= */
@@ -155,6 +179,12 @@ footer p {
 
 .socialmedia img {
   width: 32px;
+  transition: transform 0.2s;
+}
+
+/* Social Media Hover Effect */
+.socialmedia img:hover {
+  transform: scale(1.1);
 }
 
 /* =========================================
@@ -166,4 +196,6 @@ footer p {
 
 .w3c-img {
   width: 88px;
-}
+  display: inline-block;
+  vertical-align: middle;
+      }
