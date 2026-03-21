@@ -1,7 +1,7 @@
 /* =========================================
 0. Universal Reset
 ========================================= */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -38,7 +38,7 @@ header, main, footer {
   padding: 20px;
 }
 
-/* AJOUT IMPORTANT */
+/* Header / Logo */
 header {
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ header nav {
 
 header nav a {
   text-decoration: none;
-  color: var(--text-on-primary);
+  color: var(--text-on-primary); /* blanc pour contraste */
   font-weight: bold;
   padding: 5px 15px;
 }
@@ -182,7 +182,7 @@ footer p {
   transition: transform 0.2s;
 }
 
-/* Social Media Hover Effect */
+/* Social Media Hover */
 .socialmedia img:hover {
   transform: scale(1.1);
 }
@@ -198,4 +198,4 @@ footer p {
   width: 88px;
   display: inline-block;
   vertical-align: middle;
-      }
+    }
