@@ -1,6 +1,6 @@
 /* =========================================
-   0. Universal Reset
-   ========================================= */
+0. Universal Reset
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +8,23 @@
 }
 
 /* =========================================
-   1. Variables (9 au total - TOUTES UTILISÉES)
-   ========================================= */
+1. Variables
+========================================= */
 :root {
   --primary-color: #004e7c;
   --secondary-color: #fca311;
   --accent1-color: #e5e5e5;
   --accent2-color: #14213d;
   --text-on-dark: #ffffff;
-  --text-on-light: #14213d; 
+  --text-on-light: #14213d;
   --text-on-primary: #ffffff;
   --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
 
 /* =========================================
-   2. Global Styles
-   ========================================= */
+2. Global Styles
+========================================= */
 body {
   font-family: var(--body-font);
   color: var(--accent2-color);
@@ -38,6 +38,13 @@ header, main, footer {
   padding: 20px;
 }
 
+/* AJOUT IMPORTANT */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo {
   width: 100px;
   display: block;
@@ -45,8 +52,8 @@ header, main, footer {
 }
 
 /* =========================================
-   3. Typography
-   ========================================= */
+3. Typography
+========================================= */
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
@@ -58,14 +65,15 @@ p {
 }
 
 /* =========================================
-   4. Navigation (Header)
-   ========================================= */
+4. Navigation
+========================================= */
 header nav {
   display: flex;
   justify-content: space-around;
   background-color: var(--primary-color);
   padding: 10px;
   margin-top: 15px;
+  width: 100%;
 }
 
 header nav a {
@@ -81,8 +89,8 @@ header nav a:hover {
 }
 
 /* =========================================
-   5. Hero Section
-   ========================================= */
+5. Hero
+========================================= */
 .hero {
   position: relative;
   margin-bottom: 30px;
@@ -123,8 +131,8 @@ header nav a:hover {
 }
 
 /* =========================================
-   6. Footer & Social Media
-   ========================================= */
+6. Footer
+========================================= */
 footer {
   text-align: center;
   border-top: 2px solid var(--primary-color);
@@ -150,13 +158,12 @@ footer p {
 }
 
 /* =========================================
-   7. W3C Badge
-   ========================================= */
+7. W3C Badge
+========================================= */
 .w3c-badge {
   margin-top: 10px;
 }
 
 .w3c-img {
   width: 88px;
-  height: auto;
 }
