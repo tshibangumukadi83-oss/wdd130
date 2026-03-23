@@ -1,113 +1,73 @@
-/* =========================================
-0. Universal Reset
-========================================= */
-*, *::before, *::after {
+/* RESET */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================================
-1. Variables
-========================================= */
+/* VARIABLES */
 :root {
   --primary-color: #004e7c;
   --secondary-color: #fca311;
   --accent1-color: #e5e5e5;
   --accent2-color: #14213d;
-  --text-on-dark: #ffffff;
-  --text-on-light: #14213d;
-  --text-on-primary: #ffffff;
-  --heading-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  --body-font: Arial, Helvetica, sans-serif;
+  --white: #ffffff;
 }
 
-/* =========================================
-2. Global Styles
-========================================= */
+/* GLOBAL */
 body {
-  font-family: var(--body-font);
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--accent2-color);
-  background-color: white;
   line-height: 1.6;
 }
 
-header, main, footer {
-  max-width: 840px;
-  margin: 0 auto;
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
 }
 
-/* Header / Logo */
+/* HEADER */
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  width: 100px;
-  display: block;
-  margin: 0 auto 10px auto;
+  width: 80px;
 }
 
-/* =========================================
-3. Typography
-========================================= */
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-/* =========================================
-4. Navigation
-========================================= */
-header nav {
+/* NAV */
+nav ul {
   display: flex;
-  justify-content: space-around;
-  background-color: var(--primary-color);
-  padding: 10px;
-  margin-top: 15px;
-  width: 100%;
+  list-style: none;
+  gap: 20px;
 }
 
-header nav a {
+nav a {
   text-decoration: none;
-  color: var(--text-on-primary); /* blanc pour contraste */
+  color: var(--primary-color);
   font-weight: bold;
-  padding: 5px 15px;
 }
 
-header nav a:hover {
+nav a:hover,
+.active {
   color: var(--secondary-color);
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Navigation */
-@media (max-width: 600px) {
-  header nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* =========================================
-5. Hero
-========================================= */
+/* HERO */
 .hero {
   position: relative;
-  margin-bottom: 30px;
-  border: 4px solid var(--accent1-color);
 }
 
 .hero img {
-  display: block;
   width: 100%;
+  display: block;
 }
 
 .hero h1 {
@@ -115,87 +75,92 @@ header nav a:hover {
   top: 20px;
   width: 100%;
   text-align: center;
-  background-color: rgba(229, 229, 229, 0.8);
-  color: var(--text-on-light);
-  padding: 10px 0;
-  margin: 0;
+  background: rgba(255,255,255,0.7);
+  padding: 10px;
 }
 
 .hero article {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 60%;
+  background: rgba(20,33,61,0.85);
+  color: white;
   padding: 15px;
-  background-color: rgba(20, 33, 61, 0.85);
-  color: var(--text-on-dark);
+  width: 60%;
 }
 
 .hero article img {
   float: right;
-  width: 80px;
-  margin-left: 15px;
-  border: 1px solid var(--text-on-dark);
+  width: 70px;
+  margin-left: 10px;
 }
 
-/* Hero Responsive */
-@media (max-width: 600px) {
-  .hero article {
-    width: 90%;
-    bottom: 10px;
-    right: 5%;
-    padding: 10px;
-  }
-  .hero article img {
-    width: 50px;
-    float: none;
-    display: block;
-    margin: 10px auto 0 auto;
-  }
+/* SECTIONS */
+section {
+  margin-top: 40px;
 }
 
-/* =========================================
-6. Footer
-========================================= */
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  border-top: 2px solid var(--primary-color);
-  background-color: var(--accent1-color);
   margin-top: 40px;
-  padding: 20px;
-}
-
-footer p {
-  margin-bottom: 10px;
-  font-weight: bold;
+  border-top: 2px solid var(--primary-color);
 }
 
 .socialmedia {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-bottom: 15px;
+  gap: 20px;
+  margin: 10px 0;
 }
 
 .socialmedia img {
-  width: 32px;
-  transition: transform 0.2s;
+  width: 30px;
 }
 
-/* Social Media Hover */
-.socialmedia img:hover {
-  transform: scale(1.1);
+.w3c-badge img {
+  width: 80px;
 }
 
-/* =========================================
-7. W3C Badge
-========================================= */
-.w3c-badge {
-  margin-top: 10px;
-}
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-.w3c-img {
-  width: 88px;
-  display: inline-block;
-  vertical-align: middle;
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero article {
+    width: 90%;
+    right: 5%;
+  }
+}
