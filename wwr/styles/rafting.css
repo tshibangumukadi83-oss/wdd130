@@ -1,6 +1,6 @@
 /* =========================================
-0. Universal Reset
-========================================= */
+ 0. Universal Reset
+ ========================================== */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -12,7 +12,6 @@
 ========================================= */
 :root {
   --primary-color: #004e7c;
-  --secondary-color: #fca311;
   --accent2-color: #14213d;
 }
 
@@ -35,8 +34,27 @@ body {
   height: 500px;
 }
 
-.hero h1, .hero article {
+.hero h1,
+.hero article {
   position: absolute;
+  z-index: 1; /* assure overlay */
+}
+
+/* Exemple de positionnement */
+.hero h1 {
+  top: 20px;
+  left: 20px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero article {
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .hero article img {
@@ -68,6 +86,7 @@ a.active {
 
 .socialmedia a {
   display: inline-block;
+  text-decoration: none; /* supprime soulignement */
 }
 
 .socialmedia a img {
