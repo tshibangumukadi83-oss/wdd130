@@ -1,6 +1,6 @@
 /* =========================================
- 0. Universal Reset
- ========================================== */
+0. Universal Reset
+========================================= */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -25,6 +25,12 @@ body {
   line-height: 1.6;
 }
 
+/* Centrer le contenu */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 /* =========================================
 3. Hero Section
 ========================================= */
@@ -32,6 +38,12 @@ body {
   position: relative;
   width: 100%;
   height: 500px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero h1 {
@@ -56,34 +68,80 @@ body {
 
 .hero article img {
   float: right;
-  max-width: 200px;
+  max-width: 100px;
+  margin-left: 10px;
 }
 
 /* =========================================
-4. Links
+4. Navigation (optionnel mais propre)
 ========================================= */
-a {
-  text-decoration: none;
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #fca311;
+}
+
+/* =========================================
+5. Sections
+========================================= */
+section {
+  padding: 2rem;
+}
+
+/* =========================================
+6. Adventure Section (IMPORTANT)
+========================================= */
+.adventure h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Grid layout */
+.adventure-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+/* Figures */
+.adventure-gallery figure {
+  text-align: center;
+}
+
+/* Images uniformes */
+.adventure-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Caption */
+figcaption {
+  margin-top: 5px;
+  font-size: 0.9rem;
   color: var(--primary-color);
 }
 
-a.active {
-  color: #b36000; /* contraste WCAG AA sur fond blanc */
-}
-
 /* =========================================
-5. Footer Social Media
+7. Footer Social Media
 ========================================= */
 .socialmedia {
   display: flex;
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
-}
-
-.socialmedia a {
-  display: inline-block;
-  text-decoration: none; /* supprime soulignement */
 }
 
 .socialmedia a img {
@@ -97,18 +155,18 @@ a.active {
 }
 
 /* =========================================
-6. Sections & Figures
+8. Responsive (Mobile)
 ========================================= */
-section {
-  padding: 2rem;
-}
+@media (max-width: 800px) {
+  .adventure-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-figure {
-  margin: 1rem 0;
-}
+  .hero {
+    height: 300px;
+  }
 
-figcaption {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--primary-color);
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
