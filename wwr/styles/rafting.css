@@ -1,18 +1,24 @@
-/* RESET */
+/* =========================================
+0. RESET
+========================================= */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* VARIABLES */
+/* =========================================
+1. VARIABLES
+========================================= */
 :root {
   --primary-color: #004e7c;
   --accent2-color: #14213d;
   --white: #ffffff;
 }
 
-/* BODY */
+/* =========================================
+2. BODY
+========================================= */
 body {
   font-family: Arial, sans-serif;
   color: var(--accent2-color);
@@ -25,7 +31,9 @@ main {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* =========================================
+3. HEADER
+========================================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -33,15 +41,9 @@ header {
   padding: 1rem;
 }
 
-/* NAVIGATION */
-nav {
-  display: flex;
-  gap: 2rem;
-  background-color: var(--primary-color);
-  padding: 1rem;
-}
-
-/* NAVIGATION FIX */
+/* =========================================
+4. NAVIGATION (FIXED)
+========================================= */
 header nav {
   display: flex;
   gap: 2rem;
@@ -49,27 +51,28 @@ header nav {
   padding: 1rem;
 }
 
-/* FORCE ALL LINKS TO BE WHITE */
-header nav a {
-  color: #ffffff;
+/* Force ALL header links to be visible */
+header nav a,
+header nav a:link,
+header nav a:visited {
+  color: var(--white);
   font-weight: bold;
   text-decoration: none;
 }
 
-/* HANDLE LINK STATES */
-header nav a:link,
-header nav a:visited {
-  color: #ffffff;
-}
-
+/* Hover effect */
 header nav a:hover {
   text-decoration: underline;
 }
 
+/* Active page */
 header nav a.active {
   color: #ffd166;
 }
-/* HERO */
+
+/* =========================================
+5. HERO
+========================================= */
 .hero {
   position: relative;
   height: 500px;
@@ -107,12 +110,16 @@ header nav a.active {
   margin-left: 10px;
 }
 
-/* SECTIONS */
+/* =========================================
+6. SECTIONS
+========================================= */
 section {
   padding: 2rem;
 }
 
-/* ADVENTURE */
+/* =========================================
+7. ADVENTURE
+========================================= */
 .adventure h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -141,7 +148,9 @@ figcaption {
   color: var(--primary-color);
 }
 
-/* SOCIAL */
+/* =========================================
+8. SOCIAL MEDIA
+========================================= */
 .socialmedia {
   display: flex;
   gap: 1rem;
@@ -163,13 +172,24 @@ figcaption {
   transform: scale(1.1);
 }
 
-/* FOOTER */
+/* =========================================
+9. FOOTER
+========================================= */
 footer {
   text-align: center;
   padding: 1rem;
 }
 
-/* RESPONSIVE */
+/* =========================================
+10. FINAL CONTRAST FIX (IMPORTANT)
+========================================= */
+nav a {
+  color: var(--white);
+}
+
+/* =========================================
+11. RESPONSIVE
+========================================= */
 @media (max-width: 800px) {
   .adventure-gallery {
     grid-template-columns: repeat(2, 1fr);
