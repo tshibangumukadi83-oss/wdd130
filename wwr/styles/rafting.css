@@ -1,42 +1,59 @@
-/* =========================================
-0. Universal Reset
-========================================= */
+/* RESET */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================================
-1. Variables
-========================================= */
+/* VARIABLES */
 :root {
   --primary-color: #004e7c;
   --accent2-color: #14213d;
+  --white: #ffffff;
 }
 
-/* =========================================
-2. Body & Typography
-========================================= */
+/* BODY */
 body {
   font-family: Arial, sans-serif;
   color: var(--accent2-color);
-  background-color: #ffffff;
+  background-color: var(--white);
   line-height: 1.6;
 }
 
-/* Centrer le contenu */
 main {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* =========================================
-3. Hero Section
-========================================= */
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+nav a {
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a.active {
+  color: #ffd166;
+}
+
+/* HERO */
 .hero {
   position: relative;
-  width: 100%;
   height: 500px;
 }
 
@@ -51,8 +68,9 @@ main {
   top: 20px;
   left: 20px;
   font-size: 3rem;
-  color: #fff;
-  z-index: 1;
+  color: var(--white);
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
 }
 
 .hero article {
@@ -63,7 +81,6 @@ main {
   background-color: rgba(255,255,255,0.7);
   padding: 1rem;
   border-radius: 5px;
-  z-index: 1;
 }
 
 .hero article img {
@@ -72,54 +89,27 @@ main {
   margin-left: 10px;
 }
 
-/* =========================================
-4. Navigation (optionnel mais propre)
-========================================= */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  background-color: var(--primary-color);
-  padding: 1rem;
-}
-
-nav a {
-  color: white;
-  font-weight: bold;
-}
-
-nav a.active {
-  color: #fca311;
-}
-
-/* =========================================
-5. Sections
-========================================= */
+/* SECTIONS */
 section {
   padding: 2rem;
 }
 
-/* =========================================
-6. Adventure Section (IMPORTANT)
-========================================= */
+/* ADVENTURE */
 .adventure h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* Grid layout */
 .adventure-gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
 }
 
-/* Figures */
 .adventure-gallery figure {
   text-align: center;
 }
 
-/* Images uniformes */
 .adventure-gallery img {
   width: 100%;
   height: 150px;
@@ -127,16 +117,13 @@ section {
   border-radius: 5px;
 }
 
-/* Caption */
 figcaption {
   margin-top: 5px;
   font-size: 0.9rem;
   color: var(--primary-color);
 }
 
-/* =========================================
-7. Footer Social Media
-========================================= */
+/* SOCIAL */
 .socialmedia {
   display: flex;
   gap: 1rem;
@@ -144,7 +131,11 @@ figcaption {
   margin-top: 1rem;
 }
 
-.socialmedia a img {
+.socialmedia a {
+  text-decoration: none;
+}
+
+.socialmedia img {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
@@ -154,9 +145,13 @@ figcaption {
   transform: scale(1.1);
 }
 
-/* =========================================
-8. Responsive (Mobile)
-========================================= */
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* RESPONSIVE */
 @media (max-width: 800px) {
   .adventure-gallery {
     grid-template-columns: repeat(2, 1fr);
