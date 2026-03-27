@@ -41,21 +41,34 @@ nav {
   padding: 1rem;
 }
 
-/* FIX CONTRASTE FORCÉ */
-nav a {
-  color: #ffffff !important;
+/* NAVIGATION FIX */
+header nav {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+/* FORCE ALL LINKS TO BE WHITE */
+header nav a {
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
 }
 
-nav a:visited {
+/* HANDLE LINK STATES */
+header nav a:link,
+header nav a:visited {
   color: #ffffff;
 }
 
-nav a.active {
-  color: #ffd166;
+header nav a:hover {
+  text-decoration: underline;
 }
 
+header nav a.active {
+  color: #ffd166;
+}
 /* HERO */
 .hero {
   position: relative;
