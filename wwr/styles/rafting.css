@@ -41,10 +41,15 @@ nav {
   padding: 1rem;
 }
 
+/* FIX CONTRASTE FORCÉ */
 nav a {
-  color: var(--white);
+  color: #ffffff !important;
   font-weight: bold;
   text-decoration: none;
+}
+
+nav a:visited {
+  color: #ffffff;
 }
 
 nav a.active {
