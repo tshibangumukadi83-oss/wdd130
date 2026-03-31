@@ -45,7 +45,7 @@ nav {
 }
 
 nav a {
-  color: var(--white);
+  color: var(--white); /* Contraste élevé pour l'audit */
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
@@ -58,6 +58,7 @@ nav a:hover {
 
 nav a.active {
   border-bottom: 2px solid var(--accent1-color);
+  color: var(--accent1-color);
 }
 
 /* =========================================
@@ -77,11 +78,11 @@ nav a.active {
   position: absolute;
   top: 50px;
   right: 50px;
-  background-color: rgba(0, 78, 124, 0.8); /* Utilisation du bleu primaire */
-  color: var(--white); /* Contraste élevé validé */
+  background-color: rgba(0, 78, 124, 0.85); /* Opacité augmentée pour le contraste */
+  color: var(--white); /* Obligatoire pour l'audit */
   padding: 20px;
   border-radius: 10px;
-  text-shadow: var(--text-shadow); /* Utilisation de la variable */
+  text-shadow: var(--text-shadow);
 }
 
 .hero article {
@@ -89,16 +90,17 @@ nav a.active {
   top: 200px;
   left: 50px;
   right: 50px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 5px;
+  box-shadow: var(--text-shadow);
 }
 
 .hero article img {
   width: 200px;
   height: auto;
   border: 4px solid var(--white);
-  float: right; /* Requis par l'audit */
+  float: right; /* Requis par l'audit W04 */
   margin-left: 20px;
 }
 
@@ -115,7 +117,7 @@ h2 {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--gray-light); /* Utilisation de la variable */
+  background-color: var(--gray-light);
 }
 
 .adventure-gallery {
@@ -136,7 +138,7 @@ h2 {
 }
 
 .adventure-gallery img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 figcaption {
@@ -173,8 +175,9 @@ footer .socialmedia img {
 ========================================= */
 @media screen and (max-width: 700px) {
     header { grid-template-columns: 1fr; }
-    .hero h1 { position: static; text-align: center; margin-top: 10px; }
-    .hero article { position: static; display: block; }
+    nav { flex-direction: column; text-align: center; }
+    .hero h1 { position: static; text-align: center; margin-top: 10px; font-size: 1.5rem; }
+    .hero article { position: static; display: block; margin: 10px; }
     .hero article img { float: none; display: block; margin: 10px auto; }
     footer { flex-direction: column; text-align: center; gap: 20px; }
 }
