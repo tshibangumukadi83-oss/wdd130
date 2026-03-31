@@ -20,6 +20,7 @@ body {
   font-family: 'Lato', Arial, sans-serif;
   color: var(--accent2-color);
   line-height: 1.6;
+  background-color: var(--white);
 }
 
 /* =========================================
@@ -60,11 +61,10 @@ nav a.active {
 }
 
 /* =========================================
-3. HERO SECTION (Améliorée)
+3. HERO SECTION
 ========================================= */
 .hero {
   position: relative;
-  display: block;
 }
 
 .hero img {
@@ -77,56 +77,72 @@ nav a.active {
   position: absolute;
   top: 50px;
   right: 50px;
-  background-color: rgba(0, 78, 124, 0.7); /* Bleu primaire transparent */
-  color: var(--white);
+  background-color: rgba(0, 78, 124, 0.8); /* Utilisation du bleu primaire */
+  color: var(--white); /* Contraste élevé validé */
   padding: 20px;
   border-radius: 10px;
+  text-shadow: var(--text-shadow); /* Utilisation de la variable */
 }
 
 .hero article {
   position: absolute;
-  top: 180px;
+  top: 200px;
   left: 50px;
   right: 50px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  border-radius: 5px;
 }
 
 .hero article img {
   width: 200px;
   height: auto;
   border: 4px solid var(--white);
+  float: right; /* Requis par l'audit */
+  margin-left: 20px;
 }
 
 /* =========================================
-4. GALERIE D'IMAGES (Point clé W04)
+4. CONTENT & GALLERY
 ========================================= */
+h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.history {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--gray-light); /* Utilisation de la variable */
+}
+
 .adventure-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .adventure-gallery img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .adventure-gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 figcaption {
   text-align: center;
-  font-style: italic;
-  margin-top: 5px;
+  padding: 10px;
+  font-weight: bold;
 }
 
 /* =========================================
@@ -135,24 +151,30 @@ figcaption {
 footer {
   background-color: var(--accent2-color);
   color: var(--white);
-  padding: 30px;
+  padding: 40px 20px;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+footer .socialmedia {
+  display: flex;
+  gap: 15px;
+}
+
 footer .socialmedia img {
-  width: 40px;
-  margin-left: 10px;
+  width: 35px;
+  height: auto;
 }
 
 /* =========================================
 6. RESPONSIVE
 ========================================= */
 @media screen and (max-width: 700px) {
-    header { grid-template-columns: 1fr; text-align: center; }
-    .hero h1 { position: static; font-size: 1.5rem; text-align: center; }
-    .hero article { flex-direction: column; position: static; }
-    footer { flex-direction: column; gap: 20px; }
+    header { grid-template-columns: 1fr; }
+    .hero h1 { position: static; text-align: center; margin-top: 10px; }
+    .hero article { position: static; display: block; }
+    .hero article img { float: none; display: block; margin: 10px auto; }
+    footer { flex-direction: column; text-align: center; gap: 20px; }
 }
