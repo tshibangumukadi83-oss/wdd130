@@ -45,7 +45,7 @@ nav {
 }
 
 nav a {
-  color: var(--white); /* Contraste élevé pour l'audit */
+  color: var(--white);
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
@@ -62,10 +62,11 @@ nav a.active {
 }
 
 /* =========================================
-3. HERO SECTION
+3. HERO SECTION (Used in Index/Home)
 ========================================= */
 .hero {
   position: relative;
+  text-align: center;
 }
 
 .hero img {
@@ -78,13 +79,15 @@ nav a.active {
   position: absolute;
   top: 50px;
   right: 50px;
-  background-color: rgba(0, 78, 124, 0.85); /* Opacité augmentée pour le contraste */
-  color: var(--white); /* Obligatoire pour l'audit */
+  background-color: rgba(0, 78, 124, 0.85);
+  color: var(--white);
   padding: 20px;
   border-radius: 10px;
   text-shadow: var(--text-shadow);
+  z-index: 10;
 }
 
+/* About Page Specific Hero Article */
 .hero article {
   position: absolute;
   top: 200px;
@@ -100,55 +103,134 @@ nav a.active {
   width: 200px;
   height: auto;
   border: 4px solid var(--white);
-  float: right; /* Requis par l'audit W04 */
+  float: right;
   margin-left: 20px;
 }
 
 /* =========================================
-4. CONTENT & GALLERY
+4. HOME PAGE SPECIFIC (Index.html)
 ========================================= */
-h2 {
-  color: var(--primary-color);
-  text-align: center;
-  margin: 40px 0 20px;
-}
-
-.history {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+.newsletter {
   background-color: var(--gray-light);
+  padding: 40px;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.adventure-gallery {
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.cta-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn-cta, .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  background-color: var(--accent2-color);
+  transform: translateY(-3px);
+}
+
+.home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.adventure-gallery img {
+.grid-item {
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.grid-item img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.adventure-gallery img:hover {
-  transform: scale(1.05);
-}
-
-figcaption {
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 /* =========================================
-5. FOOTER
+5. TRIPS PAGE SPECIFIC (Trips.html)
+========================================= */
+.trips-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.trip-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: center;
+  background: var(--gray-light);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.trip-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.trips-table {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* =========================================
+6. FOOTER
 ========================================= */
 footer {
   background-color: var(--accent2-color);
@@ -171,13 +253,19 @@ footer .socialmedia img {
 }
 
 /* =========================================
-6. RESPONSIVE
+7. RESPONSIVE
 ========================================= */
 @media screen and (max-width: 700px) {
     header { grid-template-columns: 1fr; }
     nav { flex-direction: column; text-align: center; }
+    
     .hero h1 { position: static; text-align: center; margin-top: 10px; font-size: 1.5rem; }
     .hero article { position: static; display: block; margin: 10px; }
     .hero article img { float: none; display: block; margin: 10px auto; }
+    
+    .home-grid, .trip-card {
+        grid-template-columns: 1fr;
+    }
+    
     footer { flex-direction: column; text-align: center; gap: 20px; }
 }
